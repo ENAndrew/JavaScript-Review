@@ -182,6 +182,12 @@ console.log(sum(2)(3));  // Outputs 5    //this is not a function invocation?
 
 */
 
-function sum(x, y) {
-    return y ? (x + y) : x;
+function sum() {
+    var args = [].slice().call(arguments);  //does this work?
+    var total = 0;
+    args.forEach(function(item) {
+        total +=item;
+    });
+    
+    return total;
 }
