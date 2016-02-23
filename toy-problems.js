@@ -55,13 +55,13 @@ flatten([1, 2, [3, [4], 5, 6], 7]); // [1, 2, 3, 4, 5, 6, 7]   //CORRECT OUTPUT
 Given an array [a1, a2, ..., aN, b1, b2, ..., bN, c1, c2, ..., cN] convert it to [a1, b1, c1, a2, b2, c2, ..., aN, bN, cN]
 
 */
-function alphaSort(arr) {
+function numSort(arr) {
     
 }
 
-//var mixArray = [a2, b3, c2, a1, aN, b1, c1, a3, c3, cN, bN, b3, b2];
+var mixArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-alphaSort(mixArray);
+numSort(mixArray);
 
 /*
 
@@ -161,17 +161,10 @@ For example, if the input is ‘tree traversal’ the output will be "tre avsl".
 */
 
 function killDupes(str) {
-    var strArr = str.split('');
-    var testObj = {};
-    for(var i = 0; i < strArr.length; i ++) {
-        var x = str.indexOf(strArr[i]);
-        console.log(x);
-    }
-
-
+    return str.split('').filter(function(x, n, s){return s.indexOf(x) === n;}).join('');
 }
 
-killDupes('tree traversal');
+killDupes('tree traversal');    //CORRECT OUTPUT
 
 
 /*
